@@ -3,13 +3,14 @@ defmodule BamlElixir.Native do
 
   use RustlerPrecompiled,
     otp_app: :baml_elixir,
-    base_url: "https://github.com/emilsoman/baml_elixir/releases/download/v#{version}/",
+    base_url: "https://github.com/grejdi/baml_elixir/releases/download/v#{version}/",
     force_build: System.get_env("BAML_ELIXIR_BUILD") in ["1", "true"],
     version: version,
     targets: [
       "aarch64-apple-darwin",
-      "x86_64-unknown-linux-gnu",
-      "aarch64-unknown-linux-gnu"
+      "aarch64-unknown-linux-gnu",
+      "x86_64-apple-darwin",
+      "x86_64-unknown-linux-gnu"
     ]
 
   def call(_function_name, _args, _path, _collectors, _client_registry, _tb),
